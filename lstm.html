@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Learning Hub - Transformer Model</title>
+    <title>Deep Learning Hub - LSTM Model</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -57,43 +57,46 @@
 
 <div class="hero-section">
     <div class="container">
-        <h1>Transformer Neural Networks</h1>
-        <p class="lead">The foundation of modern deep learning models in NLP and beyond.</p>
+        <h1>Long Short-Term Memory (LSTM)</h1>
+        <p class="lead">A specialized RNN that learns long-term dependencies in sequential data.</p>
     </div>
 </div>
 
 <div class="container content-section">
-    <h2>What is a Transformer?</h2>
-    <img src="./images/transformer-arch.png" class="img-fluid" alt="Transformer Architecture" loading="lazy">
-    <p>The Transformer is a deep learning architecture introduced in the paper <i>"Attention Is All You Need"</i> (2017).
-        It revolutionized natural language processing by enabling parallelization and long-range dependency modeling
-        through self-attention mechanisms instead of recurrence.</p>
+    <h2>What is an LSTM?</h2>
+    <img src="./images/lstm-diagram.webp" class="img-fluid" alt="LSTM Diagram" loading="lazy">
+    <p>Long Short-Term Memory networks (LSTMs) are a type of recurrent neural network designed to overcome the
+        limitations of standard RNNs, particularly their inability to capture long-range dependencies in sequential data.</p>
 
-    <h3>Core Components</h3>
+    <h3>LSTM Cell Structure</h3>
+    <p>The LSTM cell contains special structures called gates: the input gate, forget gate, and output gate. These gates
+        regulate the flow of information into and out of the memory cell, allowing the network to retain relevant
+        information over long sequences and forget irrelevant parts.</p>
+    <img src="./images/lstm-cell.png" class="img-fluid" alt="LSTM Cell Structure" loading="lazy">
     <ul>
-        <li><strong>Multi-Head Self-Attention:</strong> Allows the model to focus on different parts of a sequence in parallel.</li>
-        <li><strong>Positional Encoding:</strong> Injects sequence order information into the input embeddings.</li>
-        <li><strong>Feedforward Layers:</strong> Applied after attention to add non-linearity and depth.</li>
-        <li><strong>Layer Normalization & Residual Connections:</strong> Help stabilize training and preserve gradients.</li>
+        <li><strong>Forget Gate:</strong> Decides what information to discard from the cell state.</li>
+        <li><strong>Input Gate:</strong> Determines which values will be updated.</li>
+        <li><strong>Output Gate:</strong> Controls the output based on the cell state.</li>
     </ul>
 
-    <img src="./images/self-attention.png" class="img-fluid my-4" alt="Self-Attention Visualization" loading="lazy">
-
-    <h3>Why Transformers?</h3>
-    <p>Unlike RNNs, Transformers process all tokens at once, which leads to faster training and better utilization of
-        parallel hardware like GPUs. They also excel in capturing contextual relationships in language.</p>
-
-    <h3>Applications of Transformers</h3>
+    <h3>Advantages of LSTM</h3>
     <ul>
-        <li>Machine translation (e.g., Google Translate)</li>
+        <li>Effectively handles vanishing gradient problems.</li>
+        <li>Remembers long-term patterns in data.</li>
+        <li>Performs well on tasks like translation, text generation, and speech modeling.</li>
+    </ul>
+
+    <h3>Applications of LSTM</h3>
+    <ul>
+        <li>Stock price prediction</li>
+        <li>Music generation</li>
         <li>Text summarization</li>
-        <li>Question answering (e.g., ChatGPT, BERT)</li>
-        <li>Vision Transformers (ViT) for image classification</li>
+        <li>Handwriting recognition</li>
     </ul>
 
     <h3>Video Tutorial</h3>
     <div class="ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/U0s0f995w14" title="Transformer Tutorial" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/8HyCNIVRbSU" title="LSTM Tutorial" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -106,4 +109,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

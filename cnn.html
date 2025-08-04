@@ -1,45 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CNN - Deep Learning Explorer</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning Hub - CNN Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .hero-section {
+            background-color: #e3f2fd;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .content-section {
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <div>DL Explorer</div>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="transformer.html">Transformer</a>
-      <a href="cnn.html">CNN</a>
-      <a href="#">Resources</a>
-      <a href="#">About</a>
-      <a href="#">Contact Us</a>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Deep Learning</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="cnn.html">CNN</a></li>
+                <li class="nav-item"><a class="nav-link" href="rnn.html">RNN</a></li>
+                <li class="nav-item"><a class="nav-link" href="lstm.html">LSTM</a></li>
+                <li class="nav-item"><a class="nav-link" href="transformer.html">Transformer</a></li>
+                <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
-  <div class="main-content">
-    <h1>Convolutional Neural Networks (CNN)</h1>
-    <p>CNNs are specialized neural networks designed to process and analyze visual data.</p>
+<div class="hero-section">
+    <div class="container">
+        <h1>Convolutional Neural Networks (CNN)</h1>
+        <p class="lead">Understand the basics and applications of CNNs in deep learning.</p>
+    </div>
+</div>
 
-    <div class="section">
-      <h2>Key Components</h2>
-      <ul>
-        <li>Convolutional Layers</li>
-        <li>Pooling Layers</li>
-        <li>Fully Connected Layers</li>
-      </ul>
-      <img src="cnn-structure.png" alt="CNN diagram" />
+<div class="container content-section">
+    <h2>What is a CNN?</h2>
+    <img src="./images/cnn-diagram.webp" class="img-fluid" alt="CNN Diagram">
+    <p>Convolutional Neural Networks (CNNs) are specialized neural networks designed for processing data with grid-like
+        structures such as images. CNNs excel at image recognition, classification, and processing tasks.</p>
+
+    <h3>Key Components of CNN</h3>
+
+    <div class="mt-5">
+        <h3>Convolutional Layers</h3>
+        <p>The convolutional layer is the core building block of a CNN. It applies a mathematical operation called
+            convolution, using filters or kernels to extract features from input images. Each kernel scans the input
+            image, producing feature maps that capture the presence of specific patterns such as edges, textures,
+            and
+            shapes.</p>
+
+        <p>The convolution operation involves sliding a small kernel or filter across the input image, computing
+            element-wise multiplications, and summing them to form an output. The stride parameter determines the
+            step
+            size of the kernel movement, influencing the size of the resulting feature map. Padding may also be
+            applied
+            to ensure consistent output dimensions.</p>
+
+        <p>Through successive convolutional layers, CNNs learn hierarchical features—from simple edges and textures
+            to
+            complex structures and objects. This hierarchical feature extraction significantly enhances the model's
+            ability to accurately interpret and classify images.</p>
+        <img src="./images/convolutional-layer.webp" class="img-fluid" alt="CNN Diagram">
     </div>
 
-    <div class="section">
-      <h2>Use Cases</h2>
-      <p>Used in facial recognition, object detection, and image classification tasks.</p>
-    </div>
-  </div>
+    <div class="mt-5">
+        <h3>Pooling Layers</h3>
+        <img src="./images/pooling-layers.png" class="img-fluid" alt="CNN Diagram">
+        <p>Pooling layers play a crucial role in CNNs by progressively reducing the spatial dimensions of the feature
+            maps, making the network more computationally efficient. This operation not only decreases the amount of
+            parameters and computation required but also helps control overfitting.</p>
 
-  <footer>
-    &copy; 2025 Deep Learning Explorer. All rights reserved.
-  </footer>
+        <p>There are two main types of pooling methods commonly used:</p>
+        <ul>
+            <li><strong>Max Pooling:</strong> Selects the maximum value within each region of the feature map. It
+                effectively captures the most prominent features and preserves critical information such as edges and
+                textures.
+            </li>
+            <li><strong>Average Pooling:</strong> Computes the average value within each pooling region, providing a
+                smooth and generalized representation of the features.
+            </li>
+        </ul>
+
+        <p>Pooling typically involves moving a small window across the feature map and extracting the maximum or average
+            values. Similar to convolution, pooling operations also have parameters like window size, stride, and
+            padding, which control the output size.</p>
+
+        <p>By strategically using pooling layers, CNNs can capture essential features more effectively while
+            significantly enhancing the network's overall efficiency and robustness.</p>
+    </div>
+
+    <div class="mt-5">
+        <h3>Fully Connected Layers</h3>
+        <img src="./images/fnn.png" class="img-fluid" alt="CNN Diagram">
+
+        <p>Fully connected layers, often found at the end of a CNN architecture, are responsible for making final
+            predictions or classifications. These layers take the high-level features extracted by previous
+            convolutional and pooling layers and map them to the desired output classes.</p>
+
+        <p>Each neuron in a fully connected (dense) layer is connected to every neuron in the previous layer. This dense
+            connectivity enables the network to learn complex combinations of features and patterns from the input
+            data.</p>
+
+        <p>While convolutional and pooling layers excel at extracting and compressing spatial features, the fully
+            connected layers act as decision makers, interpreting these features to output class scores or regression
+            values. In image classification tasks, the output of the final fully connected layer typically feeds into a
+            softmax function to produce class probabilities.</p>
+
+        <p>It's important to manage the number and size of fully connected layers to avoid overfitting, especially when
+            working with limited training data. Techniques such as dropout are often applied to these layers to improve
+            generalization.</p>
+
+    </div>
+
+    <h3>Video Tutorial</h3>
+    <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/YRhxdVk_sIs" title="CNN Tutorial" allowfullscreen></iframe>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <span>&copy; 2025 Deep Learning Hub. All rights reserved.</span>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

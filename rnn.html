@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Learning Hub - Transformer Model</title>
+    <title>Deep Learning Hub - RNN Model</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -57,43 +57,44 @@
 
 <div class="hero-section">
     <div class="container">
-        <h1>Transformer Neural Networks</h1>
-        <p class="lead">The foundation of modern deep learning models in NLP and beyond.</p>
+        <h1>Recurrent Neural Networks (RNN)</h1>
+        <p class="lead">Learn how RNNs handle sequential data in deep learning.</p>
     </div>
 </div>
 
 <div class="container content-section">
-    <h2>What is a Transformer?</h2>
-    <img src="./images/transformer-arch.png" class="img-fluid" alt="Transformer Architecture" loading="lazy">
-    <p>The Transformer is a deep learning architecture introduced in the paper <i>"Attention Is All You Need"</i> (2017).
-        It revolutionized natural language processing by enabling parallelization and long-range dependency modeling
-        through self-attention mechanisms instead of recurrence.</p>
+    <h2>What is an RNN?</h2>
+    <img src="./images/rnn-diagram.png" class="img-fluid" alt="RNN Diagram" loading="lazy">
+    <p>Recurrent Neural Networks (RNNs) are a class of neural networks designed for sequence modeling tasks. They
+        maintain a hidden state that captures temporal information, making them ideal for processing data such as time
+        series, speech, and text.</p>
 
-    <h3>Core Components</h3>
+    <h3>How RNNs Work</h3>
+    <p>RNNs process input data one timestep at a time. At each timestep, they take the current input and the previous
+        hidden state to produce a new hidden state. This mechanism allows RNNs to retain information from the past and
+        apply it to the present input.</p>
+
+    <img src="./images/rnn-flow.png" class="img-fluid" alt="RNN Flow Diagram" loading="lazy">
+    <p>In contrast to feedforward networks, RNNs have loops within their architecture, enabling information persistence
+        over time. However, they can suffer from issues like vanishing gradients when handling long sequences.</p>
+
+    <h3>Applications of RNNs</h3>
     <ul>
-        <li><strong>Multi-Head Self-Attention:</strong> Allows the model to focus on different parts of a sequence in parallel.</li>
-        <li><strong>Positional Encoding:</strong> Injects sequence order information into the input embeddings.</li>
-        <li><strong>Feedforward Layers:</strong> Applied after attention to add non-linearity and depth.</li>
-        <li><strong>Layer Normalization & Residual Connections:</strong> Help stabilize training and preserve gradients.</li>
+        <li>Text generation and language modeling</li>
+        <li>Speech recognition</li>
+        <li>Machine translation</li>
+        <li>Time-series forecasting</li>
+        <li>Sentiment analysis</li>
     </ul>
 
-    <img src="./images/self-attention.png" class="img-fluid my-4" alt="Self-Attention Visualization" loading="lazy">
-
-    <h3>Why Transformers?</h3>
-    <p>Unlike RNNs, Transformers process all tokens at once, which leads to faster training and better utilization of
-        parallel hardware like GPUs. They also excel in capturing contextual relationships in language.</p>
-
-    <h3>Applications of Transformers</h3>
-    <ul>
-        <li>Machine translation (e.g., Google Translate)</li>
-        <li>Text summarization</li>
-        <li>Question answering (e.g., ChatGPT, BERT)</li>
-        <li>Vision Transformers (ViT) for image classification</li>
-    </ul>
+    <h3>Limitations of Vanilla RNNs</h3>
+    <p>Standard RNNs struggle with long-term dependencies due to gradient vanishing or explosion during training. To
+        overcome this, advanced variants like LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit) were
+        developed.</p>
 
     <h3>Video Tutorial</h3>
     <div class="ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/U0s0f995w14" title="Transformer Tutorial" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/6niqTuYFZLQ" title="RNN Tutorial" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -106,4 +107,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
